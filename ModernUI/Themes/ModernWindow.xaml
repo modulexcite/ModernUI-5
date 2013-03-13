@@ -1,0 +1,40 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:shell="http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell"
+                    xmlns:controls="clr-namespace:ModernUI.Controls">
+    <Style TargetType="{x:Type controls:ModernWindow}">
+        <Setter Property="WindowStyle" Value="None"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:ModernWindow">
+                    <Border x:Name="WindowBorder" BorderBrush="{DynamicResource WindowBorder}" BorderThickness="1">
+                        <Border.Background>
+                            <SolidColorBrush x:Name="WindowBorderBackground" Color="{DynamicResource WindowBackgroundColor}" />
+                        </Border.Background>
+                        <Border.Resources>
+                            <Storyboard x:Key="BackgroundAnimation">
+                                <ColorAnimation Storyboard.TargetName="WindowBorderBackground" Storyboard.TargetProperty="Color" To="{DynamicResource WindowBackgroundColor}" Duration="0:0:.6" />
+                            </Storyboard>
+                        </Border.Resources>
+                        <AdornerDecorator>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="{Binding TitleBarHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=controls:ModernWindow}}"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Border Grid.Row="0" Background="{DynamicResource WindowHeaderGradient}">
+                                    <TextBlock Text="{TemplateBinding Title}"
+                                               Foreground="{Binding TitleBarForground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=controls:ModernWindow}}">
+                                        
+                                    </TextBlock>
+                                </Border>
+                                <ContentPresenter></ContentPresenter>
+                            </Grid>
+                        </AdornerDecorator>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

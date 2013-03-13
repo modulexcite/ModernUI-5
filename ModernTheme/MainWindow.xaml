@@ -1,0 +1,33 @@
+﻿<Window x:Class="ModernTheme.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <DockPanel>
+        <TabControl DockPanel.Dock="Top">
+            <TabItem Header="BasicControls">
+                <StackPanel>
+                    <Button Content="Click Me" Height="25" Width="160"></Button>
+                    <TextBox Height="26" Width="200" Text="I am TextBox!"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="ListBox">
+                <StackPanel Orientation="Horizontal">
+                    <ListBox Width="160">
+                        <ListBoxItem>aaa</ListBoxItem>
+                        <ListBoxItem>bbb</ListBoxItem>
+                        <ListBoxItem>ccc</ListBoxItem>
+                        <ListBoxItem>ddddd</ListBoxItem>
+                    </ListBox>
+
+                    <ListBox Width="160" Style="{StaticResource firstListBox}">
+                        <ListBoxItem>aaa</ListBoxItem>
+                        <ListBoxItem>bbb</ListBoxItem>
+                        <ListBoxItem>ccc</ListBoxItem>
+                        <ListBoxItem>ddddd</ListBoxItem>
+                    </ListBox>
+                </StackPanel>               
+            </TabItem>
+        </TabControl>
+        <Border></Border>
+    </DockPanel>
+</Window>

@@ -14,14 +14,16 @@ namespace ModernUI.Controls
             DependencyProperty.Register("TitleBarHeight", typeof(int), typeof(ModernWindow), new PropertyMetadata(36));
         
         public static readonly DependencyProperty TitleBarForgroundProperty =
-           DependencyProperty.Register("TitleBarForground", typeof(Brush), typeof(ModernWindow));
+           DependencyProperty.Register("TitleBarForground", typeof(Brush), 
+           typeof(ModernWindow), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(0,0,0))));
 
         
-
         public ModernWindow()
         {
             //DefaultStyleKey = typeof(ModernWindow);
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ModernWindow), new FrameworkPropertyMetadata(typeof(ModernWindow)));
+            WindowStyle = WindowStyle.None;
+            AllowsTransparency = true;
         }
 
 
